@@ -1,6 +1,7 @@
-# hurry
+# Personal-Photography-Site-Demo--Front-end
 
-> A Vue.js project
+> A Personal-Photography-Site-Demo(Front end)(Use Vue2)
+> LINK: http://photo.hurryhuang.cn
 
 ## Build Setup
 
