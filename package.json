@@ -1,7 +1,7 @@
 {
-  "name": "Personal-Photography-Site-Demo",
+  "name": "Personal-Photography-Site-Demo--Front-end",
   "version": "1.0.0",
-  "description": "Personal-Photography-Site-Demo(use Vue2)",
+  "description": "Personal-Photography-Site-Demo(Front end)(Use Vue2)",
   "author": "Hurry Huang <hurryhuang1007@qq.com>",
   "private": true,
   "scripts": {
