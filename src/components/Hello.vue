@@ -25,7 +25,7 @@
       
       <div class="row">
         <div class="column">
-          <button>Let's GO!</button>
+          <router-link to="/photo" class="button">Let's GO!</router-link>
         </div>
       </div>
     
@@ -36,11 +36,7 @@
 <script>
 export default {
   name: 'hello',
-  data () {
-    return {
-      
-    }
-  }
+  
 }
 </script>
 

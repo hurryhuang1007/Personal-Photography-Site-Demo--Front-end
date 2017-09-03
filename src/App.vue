@@ -2,8 +2,8 @@
   <div id="app">
     <div id="bg"></div>
     <div id="layout">
-      <img id="logo" src="./assets/logo.jpg">
-      <router-view></router-view>
+      <router-link to="/"><img id="logo" src="./assets/logo.jpg"></router-link>
+      <keep-alive><router-view></router-view></keep-alive>
       <div style="background-color:#f4f5f6;padding-top:24px">
         <div class="container">
           <div class="row">
@@ -29,7 +29,7 @@ setTimeout(function(){
 //为了动画更好看，你可以去了。。 有神奇的事发生
 setTimeout(function(){
   $("#bg").css("display","block");
-},1000);
+},1100);
 !function(){
   var YFlag=false;
   $(window).scroll(function(){
