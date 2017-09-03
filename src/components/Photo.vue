@@ -4,14 +4,14 @@
 
       <div class="albums" v-for="(album,index) in albums" :key="index">
         <div class="row">
-          <div class="column column-50 column-offset-25" @click="log(index)">
+          <div class="column" @click="log(index)">
             <img :src="album.src[0]">
             <h4>{{album.name}}</h4>
           </div>
         </div>
       </div>
 
-      
+
 
     </div>
   </div>
@@ -81,6 +81,8 @@ export default {
     margin-bottom: 6px;
   }
   .column{
+    margin: auto;
+    max-width: 800px;
     background-color:#f4f5f6;
     padding:5px 1px;
     border-radius:6px;
