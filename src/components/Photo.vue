@@ -4,32 +4,34 @@
 
       <div class="albums" v-for="(album,index) in albums" :key="index">
         <div class="row">
-          <div class="column" @click="log(index)">
+          <div class="column" @click="showCarousel(index)">
             <img :src="album.src[0]">
             <h4>{{album.name}}</h4>
           </div>
         </div>
       </div>
 
-
+      <album-carousel v-show="albumCarouselIsShow" :srcs="albums[index].src" @close="closeCarousel()"></album-carousel>
 
     </div>
   </div>
 </template>
 
 <script>
-import AlbumPart from '@/components/part/Album'
+import AlbumCarousel from '@/components/part/AlbumCarousel.vue'
 export default {
   name: 'photo',
   components:{
-    AlbumPart
+    AlbumCarousel
   },
   data(){
     return {
+      albumCarouselIsShow:false,
+      index:0,
       //这个只是个demo，真实项目应该通过ajax从后端获取数据
       albums:[
         {
-          name:"Gakki~",
+          name:"Gakki",
           src:[
             "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/1.jpg",
             "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/2.jpg",
@@ -41,7 +43,7 @@ export default {
           ]
         },
         {
-          name:"Cats~",
+          name:"Cats",
           src:[
             "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/1.jpg",
             "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/2.jpg",
@@ -52,7 +54,7 @@ export default {
           ]
         },
         {
-          name:"Pikachu~",
+          name:"Pikachu",
           src:[
             "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/pikachu/1.JPG",
             "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/pikachu/2.JPG",
@@ -63,8 +65,14 @@ export default {
     }
   },
   methods:{
-    log(msg,e){
-      console.log(msg)
+    showCarousel(index){
+      this.index=index;
+      this.albumCarouselIsShow=true;
+      document.body.style.overflow="hidden";
+    },
+    closeCarousel(){
+      this.albumCarouselIsShow=false;
+      document.body.style.overflow="";
     }
   }
 }

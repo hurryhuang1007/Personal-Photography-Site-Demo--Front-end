@@ -81,7 +81,7 @@ setTimeout(function(){
   border:2px solid #fff;
   position: fixed;
   top:80px;
-  left:calc(50vw - 100px);
+  left:calc(50vw - 110px);
   z-index: 99;
 }
 @keyframes begin{
