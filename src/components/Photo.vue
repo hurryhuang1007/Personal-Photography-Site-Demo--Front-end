@@ -2,15 +2,28 @@
   <div class="photo">
     <div class="container" style="padding-top:10vh;padding-bottom:10vh">
 
-ppp
+      <div class="albums" v-for="(album,index) in albums" :key="index">
+        <div class="row">
+          <div class="column column-50 column-offset-25" @click="log(index)">
+            <img :src="album.src[0]">
+            <h4>{{album.name}}</h4>
+          </div>
+        </div>
+      </div>
+
+      
 
     </div>
   </div>
 </template>
 
 <script>
+import AlbumPart from '@/components/part/Album'
 export default {
   name: 'photo',
+  components:{
+    AlbumPart
+  },
   data(){
     return {
       //这个只是个demo，真实项目应该通过ajax从后端获取数据
@@ -18,22 +31,40 @@ export default {
         {
           name:"Gakki~",
           src:[
-            
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/1.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/2.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/3.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/4.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/5.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/6.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/gakki/7.jpg",
           ]
         },
         {
           name:"Cats~",
           src:[
-            
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/1.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/2.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/3.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/4.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/5.jpg",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/cats/6.jpg",
           ]
         },
         {
           name:"Pikachu~",
           src:[
-            
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/pikachu/1.JPG",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/pikachu/2.JPG",
+            "https://raw.githubusercontent.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end/master/imgs/pikachu/3.JPG",
           ]
         },
       ],
+    }
+  },
+  methods:{
+    log(msg,e){
+      console.log(msg)
     }
   }
 }
@@ -41,5 +72,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  img{
+    width:100%;
+  }
+  h4{
+    text-align:left;
+    padding:10px 15px;
+    margin-bottom: 6px;
+  }
+  .column{
+    background-color:#f4f5f6;
+    padding:5px 1px;
+    border-radius:6px;
+    border:2px solid #f4f5f6;
+  }
+  .column:hover{
+    cursor:pointer;
+  }
+  .albums{
+    margin-bottom:5vh;
+  }
 </style>
