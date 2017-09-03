@@ -7,7 +7,9 @@
       <div style="background-color:#f4f5f6;padding-top:24px">
         <div class="container">
           <div class="row">
-            <div class="column"><h1>!!!!</h1></div>
+            <div class="column">
+              <p>Design by Hurry.&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/hurryhuang1007/Personal-Photography-Site-Demo--Front-end">Want to star it?</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -18,10 +20,37 @@
 <script>
 export default {
   name: 'app',
-  mounted(){
-    
-  }
+  
 }
+//我把index.html中的body的overflow设置成了hidden，为了在一开始的动画时去掉滚动条。下面的代码是为了能让页面滚动
+setTimeout(function(){
+  document.body.style.overflow="";
+},960);
+//为了动画更好看，你可以去了。。 有神奇的事发生
+setTimeout(function(){
+  $("#bg").css("display","block");
+},1000);
+!function(){
+  var YFlag=false;
+  $(window).scroll(function(){
+    if(this.scrollY>=120){
+      if(YFlag==false){
+        $("#logo").css("transform","matrix(.5,0,0,.5,0,-110)");
+        $("#bg").css("height","70px");
+        // $("#layout").css("padding-top","120px");
+        YFlag=true;
+      }
+    }else{
+      if(YFlag==true){
+        YFlag=false;
+      }
+      var x=1-this.scrollY/240;//console.log(x,"!!!");//x是比值 1~0.5
+      var y=1-this.scrollY/120;// 1~0
+      $("#logo").css("transform","matrix("+x+",0,0,"+x+",0,-"+110*(1-y)+")");
+      $("#bg").css("height",""+(70+110*y)+"px");
+    }
+  })
+}();
 </script>
 
 <style>
@@ -35,21 +64,33 @@ export default {
   position:fixed;
   top:0;
   left:0;
+  z-index:98;
+  animation:outIn 1.5s;
+  display: none;
 }
 #layout{
+  padding-top:260px;
   animation:begin 1s;
-  position:relative;
 }
 #logo{
-  margin-top:80px;
   height:200px;
   width:200px;
+  /*min-height: 100px;
+  min-width: 100px;*/
   border-radius:50%;
   border:2px solid #fff;
+  position: fixed;
+  top:80px;
+  left:calc(50vw - 100px);
+  z-index: 99;
 }
 @keyframes begin{
-  from{opacity:0;top:15vh;}
-  to{opacity:1;top:0;}
+  from{opacity:0;transform:translate(0,15vh);}
+  to{opacity:1;transform:translate(0,0);}
+}
+@keyframes outIn{
+  from{opacity:0}
+  to{opacity:1}
 }
 
 

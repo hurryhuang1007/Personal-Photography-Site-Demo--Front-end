@@ -1,22 +1,35 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <div class="container">
+      
+      <div class="row" style="margin-bottom:2%">
+        <div class="column"><h2>欢迎来到Hurry的个人摄影小站（Demo）</h2></div>
+      </div>
+      
+      <div class="row">
+        <div class="column">
+          <p>
+            其实呢，做这个项目的原因是刚把Vue2给学了。既然学了呢，最好还是要做个Demo来巩固一下。再加上本人GayHub（不好意思，口误，是GitHub）上还没有自己的开源项目。
+            <br>所以，正如诸位所看到的，这个项目就这么诞生了XD
+          </p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="column">
+          <p>
+            ps:现在这个项目还没有后台，所以只是一个demo。哪天有空写个？
+          </p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="column">
+          <button>Let's GO!</button>
+        </div>
+      </div>
+    
+    </div>
   </div>
 </template>
 
@@ -25,7 +38,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      
     }
   }
 }
@@ -33,21 +46,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.container{
+  padding-top: 20%;
+  padding-bottom: 20%;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+@media (min-height:1050px){
+  .container{
+    /*height:calc( 100vh - 10px );*/
+    padding-top: 24vh;
+    padding-bottom: 24vh;
+  }
 }
 </style>
