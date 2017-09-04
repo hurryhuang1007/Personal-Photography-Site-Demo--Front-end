@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/owl.carousel.min.js';
 export default {
   name: 'app',
   

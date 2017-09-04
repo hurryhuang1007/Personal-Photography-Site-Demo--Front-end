@@ -1,11 +1,9 @@
 <template>
-  <div class="albumCarousel" @click.self="$emit('close')">
+  <div class="albumCarousel" @click="$emit('close')">
     
-	<div class="row">
+	<div class="row owl-carousel owl-theme">
 	  
-	  <div class="left"><img :src="srcs[index-1]"></div>
-	  <div class="middle"><img :src="srcs[index]"></div>
-	  <div class="right"><img :src="srcs[index+1]"></div>
+	  <div v-for="(src,index) in srcs" :key="index"><img :src="src"></div>
 
 	</div>
 
@@ -22,13 +20,40 @@ export default {
   },
   data(){
   	return{
-  	  index:0,
+  	  
   	}
   },
   methods:{
   	log(msg){
   		console.log(msg);
+  	},
+  	carousel(){
+  	  $(".owl-carousel").owlCarousel({
+  	  	loop:true,
+  	  	center:true,
+  	  	autoWidth:false,
+  	  	nav:false,
+  	  	responsive:{
+  	  	  0:{
+  	  	  	item:1
+  	  	  },
+  	  	  1440:{
+  	  	  	item:2
+  	  	  }
+  	  	},
+  	  });
+  	  //console.log("!");
   	}
+  },
+  mounted(){
+  	this.carousel();
+  },
+  beforeUpdate(){
+  	$(".owl-carousel").trigger("destroy.owl.carousel");
+  },
+  updated(){
+  	this.carousel();
+  	$(".owl-carousel").removeClass("owl-hidden");//hack a bug
   }
 }
 </script>
@@ -44,8 +69,13 @@ export default {
 	background-color:rgba(0,0,0,.85);
 	z-index: 100;
   }
-  img{
+  .owl-item{
+  	min-width:60vw;
+  }
+  /*img{
+  	height: auto;
   	width:100%;
+  	max-width:100%;
   	position: absolute;
   	top: 0;
   	bottom: 0;
@@ -54,17 +84,17 @@ export default {
   	margin: auto;
   }
   .row>div{
-  	width:60vw;
+  	width:55vw;
   	height:100vh;
-  	position:fixed;
+  	position:absolute;
   }
   .middle{
   	left:20vw;
   }
   .left{
-  	left:-55vw;
+  	left:-50vw;
   }
   .right{
   	left:95vw;
-  }
+  }*/
 </style>
