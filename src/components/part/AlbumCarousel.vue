@@ -66,12 +66,18 @@ export default {
 </script>
 
 <style>
+  @media(min-width:1440px){
+  	.albumCarousel .owl-nav{
+  		display:block !important;
+  	}
+  }
   .albumCarousel .owl-dots{
   	text-align: center;
   	position:fixed;
   	top:95vh;
   	left:0;
   	width:100%;
+  	display:block !important;
   }
   .albumCarousel .owl-dot{
   	display:inline-block;
@@ -137,6 +143,7 @@ export default {
 	height:100vh;
 	background-color:rgba(0,0,0,.85);
 	z-index: 100;
+	touch-action: none;
   }
   .owl-item div{
   	width:60vw;

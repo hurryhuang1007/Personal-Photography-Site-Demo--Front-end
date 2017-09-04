@@ -31,7 +31,7 @@ setTimeout(function(){
 //为了动画更好看，你可以去了。。 有神奇的事发生
 setTimeout(function(){
   $("#bg").css("display","block");
-},1100);
+},1300);
 !function(){
   var YFlag=false;
   $(window).scroll(function(){
