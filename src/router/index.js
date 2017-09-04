@@ -6,7 +6,7 @@ const Photo = resolve => require(['@/components/Photo.vue'], resolve)
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [
     {
       path: '/',
