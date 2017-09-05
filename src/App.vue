@@ -3,7 +3,7 @@
     <div id="bg"></div>
     <div id="layout">
       <router-link to="/"><img id="logo" src="./assets/logo.jpg"></router-link>
-      <keep-alive><router-view></router-view></keep-alive>
+      <keep-alive><transition name="fade" mode="out-in"><router-view></router-view></transition></keep-alive>
       <div style="background-color:#f4f5f6;padding-top:24px">
         <div class="container">
           <div class="row">
@@ -94,7 +94,12 @@ setTimeout(function(){
   from{opacity:0}
   to{opacity:1}
 }
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
 
 
 *,

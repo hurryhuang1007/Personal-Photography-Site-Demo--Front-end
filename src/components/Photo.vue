@@ -11,7 +11,9 @@
         </div>
       </div>
 
-      <album-carousel v-show="albumCarouselIsShow" :srcs="albums[index].src" @close="closeCarousel()"></album-carousel>
+      <transition name="fade">
+        <album-carousel v-show="albumCarouselIsShow" :srcs="albums[index].src" @close="closeCarousel()"></album-carousel>
+      </transition>
 
     </div>
   </div>
