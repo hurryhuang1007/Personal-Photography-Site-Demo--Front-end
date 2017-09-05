@@ -4,6 +4,11 @@
 
 > LINK: http://photo.hurryhuang.cn
 
+## 为什么要做这个项目？
+
+其实呢，做这个项目的原因是刚把Vue2给学了。既然学了呢，最好还是要做个Demo来巩固一下。再加上本人GayHub（不好意思，口误，是GitHub）上还没有自己的开源项目。 
+所以，正如诸位所看到的，这个项目就这么诞生了XD
+
 ## Build Setup
 
 ``` bash
