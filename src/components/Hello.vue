@@ -46,11 +46,17 @@ export default {
   padding-top: 20%;
   padding-bottom: 20%;
 }
-@media (min-height:1050px){
+@media (min-width:1900px){
   .container{
     /*height:calc( 100vh - 10px );*/
     padding-top: 24vh;
     padding-bottom: 24vh;
+  }
+}
+@media (min-width:1000px){
+  .container{
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
 }
 </style>
